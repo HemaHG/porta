@@ -155,6 +155,10 @@ GEM
       nokogiri (~> 1.4)
     activemodel (5.0.6)
       activesupport (= 5.0.6)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (5.0.6)
       activemodel (= 5.0.6)
       activesupport (= 5.0.6)
@@ -211,9 +215,9 @@ GEM
     bugsnag (6.12.2)
       concurrent-ruby (~> 1.0)
     builder (3.2.3)
-    bullet (4.14.10)
+    bullet (5.9.0)
       activesupport (>= 3.0.0)
-      uniform_notifier (~> 1.9.0)
+      uniform_notifier (~> 1.11)
     byebug (11.0.1)
     cancancan (1.7.1)
     capybara (2.18.0)
@@ -299,11 +303,12 @@ GEM
     dotenv-rails (2.7.5)
       dotenv (= 2.7.5)
       railties (>= 3.2, < 6.1)
-    draper (2.1.0)
-      actionpack (>= 3.0)
-      activemodel (>= 3.0)
-      activesupport (>= 3.0)
-      request_store (~> 1.0)
+    draper (3.1.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
+      activemodel-serializers-xml (>= 1.0)
+      activesupport (>= 5.0)
+      request_store (>= 1.0)
     dry-initializer (3.0.2)
     dynamic_form (1.1.4)
     email_spec (2.2.0)
@@ -400,6 +405,9 @@ GEM
       with_env (= 1.1.0)
       xml-simple
     liquid (3.0.6)
+    listen (3.2.0)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.3.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -762,7 +770,7 @@ GEM
     unicorn-rails (2.2.1)
       rack
       unicorn
-    uniform_notifier (1.9.0)
+    uniform_notifier (1.13.0)
     url (0.3.2)
     user_agent_parser (2.5.2)
     webmock (2.3.2)
@@ -822,7 +830,7 @@ DEPENDENCIES
   braintree (~> 2.89)
   browser
   bugsnag (~> 6.11)
-  bullet (~> 4.2)
+  bullet (~> 5.6)
   cancancan (~> 1.7.1)
   capybara (~> 2.18)!
   childprocess
@@ -841,7 +849,7 @@ DEPENDENCIES
   developer_portal!
   diff-lcs (~> 1.2)
   dotenv-rails (~> 2.7)
-  draper (~> 2.0)
+  draper (~> 3.0)
   dynamic_form
   email_spec
   equivalent-xml
@@ -868,6 +876,7 @@ DEPENDENCIES
   kubeclient
   launchy
   license_finder (~> 5.5.2)
+  listen
   m (~> 1.5.1)
   mail_view (~> 2.0.4)
   mechanize
