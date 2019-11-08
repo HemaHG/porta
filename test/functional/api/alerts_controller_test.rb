@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Api::AlertsControllerTest < ActionController::TestCase
+class Functional::Api::AlertsControllerTest < ActionController::TestCase
 
   test "get index should filter by account_id, cinstance_id and fulltext" do
     provider = FactoryBot.create(:provider_account)
