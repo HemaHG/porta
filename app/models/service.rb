@@ -51,7 +51,7 @@ class Service < ApplicationRecord
     super.reject { |column| %w[act_as_product tech_support_email admin_support_email].include?(column.name) }
   end
 
-  scope :of_account, ->(account) { where.has { account_id == account } }
+  scope :of_account, ->(account) { where.has { account_id == account.id } }
 
   has_one :proxy, dependent: :destroy, inverse_of: :service, autosave: true
 
@@ -205,7 +205,6 @@ class Service < ApplicationRecord
   def using_proxy_pro?
     provider_can_use?(:proxy_pro) && proxy.self_managed?
   end
-  delegate :service_preffix, to: :provider, allow_nil: true
 
   def publish_events
     OIDC::ServiceChangedEvent.create_and_publish!(self)

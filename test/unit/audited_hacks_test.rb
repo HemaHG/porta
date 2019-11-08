@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class AuditedHacksTest < ActiveSupport::TestCase
-
   def setup
     @provider = FactoryBot.create(:provider_account)
     Audited.audit_class.delete_all

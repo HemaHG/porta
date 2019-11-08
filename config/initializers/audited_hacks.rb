@@ -39,7 +39,7 @@ module AuditHacks
       dup.tap do |copy|
         copy.send(:write_attribute, :id, id)
         copy.send(:write_attribute, :created_at, created_at)
-        copy.audited_changes = ThreeScale::FilterArguments.new(audited_changes).filter
+        copy.audited_changes = ThreeScale::FilterArguments.new(audited_changes || []).filter
       end
     end
 
