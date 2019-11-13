@@ -11,7 +11,7 @@ module BackendApiLogic
       before_save :extend_system_name, if: :backend_api_metric?
 
       def system_name
-        attributes['system_name'].to_s.gsub(/#{Regexp.escape(SYSTEM_NAME_SUFFIX_SEPARATOR)}\d+\z/, '')
+        self['system_name'].to_s.gsub(/#{Regexp.escape(SYSTEM_NAME_SUFFIX_SEPARATOR)}\d+\z/, '')
       end
     end
 
@@ -35,6 +35,10 @@ module BackendApiLogic
       def hits_extended_system_name_regex
         /\Ahits(#{Regexp.escape(SYSTEM_NAME_SUFFIX_SEPARATOR)}\d+)?\z/
       end
+
+      def extend_system_name(system_name, owner_id)
+        [system_name, owner_id].join SYSTEM_NAME_SUFFIX_SEPARATOR
+      end
     end
 
     protected
@@ -44,7 +48,7 @@ module BackendApiLogic
     end
 
     def extended_system_name
-      [system_name, owner_id].join SYSTEM_NAME_SUFFIX_SEPARATOR
+      self.class.extend_system_name(system_name, owner_id)
     end
 
     def unique_extended_system_name
