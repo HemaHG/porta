@@ -272,4 +272,4 @@ oracle = lambda { (ENV['ORACLE'] == '1') || ENV.fetch('DATABASE_URL', ENV['DB'])
 gem 'activerecord-oracle_enhanced-adapter', '~> 1.7.0', install_if: oracle
 gem 'ruby-oci8', require: false, install_if: oracle
 
-gem 'kubeclient'
+gem 'kubeclient', '~> 2.5'
