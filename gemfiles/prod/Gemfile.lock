@@ -246,7 +246,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    colorize (0.7.7)
+    colorize (0.8.1)
     compass (1.0.3)
       chunky_png (~> 1.2)
       compass-core (~> 1.0.2)
@@ -264,7 +264,7 @@ GEM
       sass-rails (< 5.1)
       sprockets (< 4.0)
     concurrent-ruby (1.1.5)
-    connection_pool (2.2.1)
+    connection_pool (2.2.2)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.5)
@@ -307,7 +307,7 @@ GEM
       activemodel (>= 3.0)
       activesupport (>= 3.0)
       request_store (~> 1.0)
-    dry-initializer (3.0.1)
+    dry-initializer (3.0.2)
     dynamic_form (1.1.4)
     email_spec (2.2.0)
       htmlentities (~> 4.3.3)
@@ -487,7 +487,7 @@ GEM
     prawn-format (0.2.1)
       prawn-core
     prawn-layout (0.2.1)
-    prometheus-client-mmap (0.9.5)
+    prometheus-client-mmap (0.9.10)
     protected_attributes (1.1.4)
       activemodel (>= 4.0.1, < 5.0)
     pry (0.12.2)
@@ -659,11 +659,11 @@ GEM
     shoulda-context (1.2.2)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
-    sidekiq (4.2.10)
-      concurrent-ruby (~> 1.0)
-      connection_pool (~> 2.2, >= 2.2.0)
+    sidekiq (5.2.7)
+      connection_pool (~> 2.2, >= 2.2.2)
+      rack (>= 1.5.0)
       rack-protection (>= 1.5.0)
-      redis (~> 3.2, >= 3.2.1)
+      redis (>= 3.3.5, < 5)
     sidekiq-cron (0.4.5)
       redis-namespace (>= 1.5.2)
       rufus-scheduler (>= 2.0.24)
@@ -673,7 +673,7 @@ GEM
       sidekiq (>= 2.14.0)
     sidekiq-pro (3.7.1)
       sidekiq (>= 4.1.5)
-    sidekiq-prometheus-exporter (0.1.11)
+    sidekiq-prometheus-exporter (0.1.12)
       sidekiq (>= 3.3.1)
     simplecov (0.10.0)
       docile (~> 1.1.0)
@@ -778,9 +778,9 @@ GEM
     yabeda (0.1.3)
       concurrent-ruby
       dry-initializer
-    yabeda-prometheus (0.1.4)
+    yabeda-prometheus (0.1.5)
       yabeda
-    yabeda-sidekiq (0.1.3)
+    yabeda-sidekiq (0.1.4)
       sidekiq
       yabeda
     yard (0.9.20)
